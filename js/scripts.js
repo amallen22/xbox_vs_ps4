@@ -36,10 +36,8 @@ $(document).ready(function () {
 
   var URLactual = window.location.href
   var parameters = URLactual.split('/')
-  // console.log(parameters)
 
-  var urlReference = parameters[9].split('.')
-  console.log(urlReference)
+  var urlReference = parameters[parameters.length - 1].split('.')
 
   if (urlReference[0]) {
     if (urlReference[0] == 'xbox') {
