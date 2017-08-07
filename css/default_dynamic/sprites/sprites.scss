@@ -1,0 +1,54 @@
+$widthDesk: 861px; 
+$widthMob: 414px; 
+
+.spriteSteps {
+    display: block;
+    position: relative;
+   // float: left;
+   // background-size: 100%;
+}
+.spriteSteps {
+    background-image: url("/pf2/images/default/steps_desktop.png");
+    width: $widthDesk / 3;
+    height: 160px;
+    margin: 0 auto $medianil;
+}
+.spriteSteps.registerPromo {
+    background-position: 0 0;
+}
+.spriteSteps.validateMail {
+    background-position: 0 -$widthDesk / 3;
+}    
+.spriteSteps.winGift {
+    background-position: 0 -$widthDesk / 1.5;
+}
+@media screen and (max-width:768px) {
+    .spriteSteps {
+        background-image: url("/pf2/images/default/steps_mobile.png");
+        width: $widthMob / 3;
+        height: 274px;
+    }
+    .spriteSteps.registerPromo {
+        background-position: 0 0;
+    }
+    .spriteSteps.validateMail {
+        background-position: 0 -$widthMob / 3;
+    }    
+    .spriteSteps.winGift {
+        background-position: 0 -$widthMob / 1.5;
+    }
+}
+@media screen and (max-width:600px) {
+    .spriteSteps {
+        width: 78px;
+        height: 151px;
+        background-size: 295.6%;
+        
+        &.validateMail {
+            background-position: -153px !important;
+        }
+        &.winGift {
+            background-position: -307px !important;
+        }
+    }
+}

@@ -1,0 +1,1053 @@
+// Variables para el concurso 230 
+
+$id_game: 230;
+
+//$color_concurso: #007d61;     
+//$btn_lead: transparent;
+
+$img_name1: "mando-ps4";
+$img_name2: "consola-ps4";
+$img_name2b: "consola-ps4-left";
+$img_name3: "mando-xbox";
+$img_name4: "consola-xbox";
+$img_name5: "logo-ps4";
+$img_name6: "logo-xbox";
+$img_name7: "game-xbox";
+$img_name8: "game-ps4";
+
+    
+@mixin bgimage($select, $format : 'd') {
+                
+    $url: "../images/#{$select}";
+
+    @if $format == 'm'{
+        $url : $url + '_mob';
+    }
+    
+    $url : $url + '.png';
+
+    background-image: url($url);
+}
+
+
+/*************** IMPORTACIÓN ESTILOS y generales *****************/
+
+    //default
+        @import './default_dynamic/default';
+
+    //icheck
+        @import './core/icheck/square/blue';
+        @import './core/icheck/square/green';
+
+
+    //sprites
+        @import './default_dynamic/sprites/sprites'; 
+
+    //paginas secundarias
+        //@import './default_dynamic/secundarias';
+
+
+/* customizar paginas interiores */
+
+/* !important | Cabecera para form = 3 y paginas interiores */
+
+.layoutPF {
+    @include gradient (lighten($color_concurso, 30%), darken($color_concurso, 40%));
+    background-color: $color_concurso;
+    
+    p {
+        color: #FFF;
+    }
+}
+.customFrame {
+    @include gradient-horizontal ($color_concurso, lighten($color_concurso, 30%), $color_concurso);
+    background-color: $color_concurso;
+
+    height: 240px;
+    text-align: center;
+    
+    > div {
+        //@include bgimage($img_name3, "m");
+        background-repeat: no-repeat;
+        background-position: 0 107.5px;
+        background-size: 100%;
+        width: 180px;
+        margin: 0 auto;
+        padding: 245px 0 0;
+    }
+}
+/**/
+.customFrame + .gameInfo {
+    h1 {
+        text-align: center;
+        margin-bottom: 0;
+
+        span:after {
+            position: relative;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+/*************** ESTILOS ESPECIFICOS PARA EL JUEGO *****************/
+
+
+body {
+    background: #000;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+header.sticky {
+    background-color: #333;
+}
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 140px;
+    
+    h1 {
+        @include text-shadow(1.5px 1.5px 1px rgba(0, 0, 0, 0.7));
+        font-size: 50px;
+        color: #FFF;
+        font-weight: 700;
+        padding: 50px 80px 0;
+        text-align: center;
+        
+        span {
+            font-weight: 700;    
+        }
+    }
+    h2 {
+        @include text-shadow(1.5px 1.5px 1px rgba(0, 0, 0, 0.7));
+        text-align: center;
+        color: #FFF;
+        margin-bottom: $medianil * 4;
+        line-height: 125%;
+    }
+    .sanValentinPT,
+    .sanValentin {
+        margin: -85px auto 0;
+    }
+}
+.wrap {
+    .container-fluid {
+        .col-md-12 {
+            h1, h2 {
+                text-align: center;
+            }
+            &.form-box {
+                padding-top: 0 !important;
+            }
+        }
+        .sanValentinPT,
+        .sanValentin {
+            //max-width: 110px;
+            width: 100%;
+            margin: 0;
+            position: absolute;
+            right: -43px;
+            bottom: 85px;
+            z-index: 10;
+        }
+    }
+}
+.gameInfo {
+    overflow: hidden;
+}
+.wrapper {
+  /*  display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;  
+
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;*/
+
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.wrapper > * {
+    // padding: 10px;
+  //  flex: 1 100%;
+}
+
+//.aside { flex: 1 auto; }
+
+@media all and (min-width: 800px) {
+    //.main    { flex: 3 0px; }
+  //  .aside.xbox { order: 1; } 
+    //.main    { order: 2; }
+    //.aside.ps4 { order: 2; }
+    //.footer  { order: 4; }
+}
+.aside {
+    width: 50%;
+    float: left;
+    position: relative;
+    
+    &:hover {
+        text-decoration: none;
+    }
+
+    > * {
+        //height: 0;
+        background-size: 100%;
+        clear: both;
+        background-repeat: no-repeat;
+
+        &.sticker {
+            //padding-top: 23.02631578947368%;
+            max-width: 225px;
+            margin: 0 auto;
+            
+            /* lo nuevo */
+                border: 2px solid #fff;
+                padding: 15px 0px 15px 115px;
+                background-size: 45%;
+                border-radius: 10px;
+                background-position: 15px center;
+                background-repeat: no-repeat;
+                color: #fff;
+                //width: auto;
+                font-size: 16px;
+                margin-bottom: 20px;
+        } 
+        &.consola {
+            width: 75%;
+            padding-top: 67.5%;
+            //max-width: 500px;
+        }
+        &.mando {
+            width: 50%;
+            margin-top: -40%;
+        }
+        &.game {
+            padding-top: 64.52095808383234%;
+            position: absolute;
+            top: -120px;
+            width: 40%;
+            z-index: 0;
+            right: -46px;
+            //margin-top: -60px;
+        }
+    }
+    
+    &.xbox {   
+        .sticker {
+            @include bgimage($img_name6);
+            margin-left: 30px;
+        }
+        &:hover {
+            .sticker {
+                color: #5cb922;
+                border-color: #5cb922;
+                text-decoration: none;
+            }
+        }
+        .consola {
+            @include bgimage($img_name4);
+            margin-right: 10%;
+        }
+        .mando {
+            @include bgimage($img_name3);
+            padding-top: 43.43825665859564%;
+            margin-left: 40%;
+        }
+        .game {
+            @include bgimage($img_name7);
+            top: -14px;
+            z-index: -1;
+            right: -3%;
+        }
+    }
+    &.ps4 {
+        //display: inline-block;
+        //text-align: right;
+
+        .sticker {
+            @include bgimage($img_name5);
+            margin-right: 30px;
+        }
+        &:hover {
+            .sticker { 
+                color: #01c7ea;
+                border-color: #01c7ea;
+                text-decoration: none;
+            }
+        }
+        .consola {
+            @include bgimage($img_name2);
+            background-position: top right;
+            margin-left: 25%;
+        }
+        .mando {
+            @include bgimage($img_name1);
+            padding-top: 43.43825665859564%;
+            background-position: top right;
+            margin-left: 17%;
+        }
+        .game {
+            @include bgimage($img_name8);
+            top: -14px;
+            z-index: -1;
+            left: 33px;
+        }
+    }
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#canvas-xbox {
+    position: fixed;
+    display: block;
+    width: 125%;
+    height: 100%;
+    top: 0;
+    left: -62.5%;
+    z-index: -10;
+}
+
+#canvas-ps4 {
+    position: fixed;
+    display: block;
+    width: 125%;
+    height: 100%;
+    top: 0;
+    right: -62.5%;
+    z-index: -10;
+}
+.wrap {
+    
+    #canvas-ps4,
+    #canvas-xbox {
+        width: 125%;
+        height: 100%;
+        top: 0;
+        right: auto;
+        left: -62%;
+    }
+    .sticker {
+        border: none;
+        background-position: left center;
+    }
+}
+.brandInfo {
+    h4,
+    h2 {
+        color: #CCC;
+    }
+    .description div {
+        color: #CCC;
+    }
+}
+.brandPower {
+    overflow: hidden;
+}
+
+#modalSubmit h2 {
+    margin: 0 auto;
+    padding: 0;
+    font-size: 26px;
+    text-align: center;
+    color: #000;
+    text-shadow: none;
+}
+
+/*********************************** XBOX & PS4 *************************************/
+
+.wrap {
+    &.modal-open {
+        background-color: #000 !important;
+        
+        h2 {
+            color: #000 !important;
+            text-shadow: none;
+        }
+    }
+    .container-fluid {
+        margin-bottom: 50px;
+        h1 {
+            padding: 50px 30px 0;
+            text-align: left;
+            margin-bottom: 0;
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 400;
+            text-align: left;
+            margin-left: 30px;
+            line-height: 125%;
+        }
+    }
+    .form-box {
+        padding: 0 7%;
+        
+        &.xboxForm {
+            /*#title-form {
+                background-color: #107c10;   
+            }*/
+            .leadBtn {
+                //background-color: #44bc02;
+                @include border-radius(0);
+            }
+        }
+        &.ps4Form {
+          /*  #title-form {
+                background-color: #054493;   
+            }*/
+            .leadBtn {
+              //  background-color: #01c7ea;
+                @include border-radius(0);
+            }
+        }
+    }
+    .aside {
+        display: block;
+        width: 100%;
+        float: none;
+        
+        > * {
+            height: 0;
+            background-size: 100%;
+            clear: both;
+            background-repeat: no-repeat;
+        }
+        .sticker {
+            padding-top: 14.026316%;
+           //max-width: 200px;
+            margin-left: 30px;
+            //margin-top: -74px;
+            position: absolute;
+            width: 150px;
+        }
+        .consola {
+            width: 65%;
+            padding-top: 48.42857142857143%;
+            margin-top: 100px;
+            margin-left: 0;
+            z-index: 1;
+            position: relative;
+        }
+        .mando {
+            position: relative;
+            margin-top: -15%;
+            z-index: 2;
+            margin-left: 45%;
+        }
+        .game {
+            padding-top: 64.52095808383234%;
+            position: absolute;
+            top: -120px;
+            width: 50%;
+            z-index: 0;
+            right: -46px;
+            //margin-top: -60px;
+        }
+        &.xbox {
+            .game {
+                @include bgimage($img_name7);
+                right: 0;
+            }
+            /*.btn.extBtn.leadBtn.btn-lg  {
+                background-color: #107c10;  
+            }*/
+        }
+        &.ps4 {
+            .consola {
+                @include bgimage($img_name2b);
+            }
+            .game {
+                @include bgimage($img_name8);
+                left: auto;
+            }
+            .mando {
+                //margin-left: 40%;
+            }
+            
+        }
+    }
+}
+    
+
+
+/*******************************************************************************
+                                RESPONSIVE
+*******************************************************************************/
+
+@media screen and (min-width: 1450px) {
+    .gameInfo {
+        .last-days {
+            max-width: 258px;
+            left: 130px;
+        }
+    }
+    .container-fluid {
+        h1 {
+            font-size: 52px !important;
+            padding: 50px 150px 0;
+        }
+    }
+    .aside {
+        margin-top: -20px;
+        
+        .consola {
+            max-width: 66%;
+        }
+        .mando {
+            max-width: 450px;
+            margin-top: -44%;
+        }
+        .game {
+            max-width: 350px;
+        }
+        &.ps4 {
+            .consola{
+                margin-left: 34% !important;
+            }
+            .game {
+                left: 10%;
+            }
+        }
+        &.xbox {
+            .game {
+                right: 3%;
+            }
+        }
+    }
+/* XBOX & PS4 */
+    .wrap {
+        h1 {
+            font-size: 52px !important;
+        }
+        .aside {
+            .consola {
+                max-width: 550px;
+            }
+            .mando {
+                max-width: 300px;
+                margin-top: -30% !important;
+            }
+            .game {
+                max-width: 300px;
+                right: 22px;
+            }
+             &.ps4 {
+                .consola{
+                    margin-left: 0 !important;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+    .last-days {
+        top: -209px;
+    }
+    .gameInfo {
+        .last-days {
+            top: -300px !important;
+        }
+    }
+    .aside {
+        .sticker {
+           // padding-top: 11% !important;    
+        }
+        .consola {
+            width: 75%;
+        }
+        .mando {
+            width: 45%;
+        }
+
+        &.xbox {   
+            .consola {
+                margin-right: 25%;
+            }
+        }
+        &.ps4 {
+            .consola {
+                margin-left: 25%;
+            }
+        }
+    }
+    
+    /* XBOX & PS4 */
+    .wrap {
+        .container-fluid {
+            h1 {
+                font-size: 60px;
+                padding: 50px 0 0 30px;
+            }
+        }
+        .aside {
+            .mando {
+                margin-top: -21%;
+            }
+            .game {
+                top: -130px;
+                right: -84px;
+            }
+            .sticker {
+                padding-top: 7%;
+                top: 64%;
+            }
+            .consola {
+                margin-left: 0;
+            }
+        }
+        .form-box {
+            //padding-top: 7%;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+   .aside {
+        
+    }
+    
+    /* XBOX & PS4 */
+    .wrap {
+        
+        .container-fluid { 
+            h1 {
+                    font-size: 48px;
+                }
+            .aside {
+                position: relative;
+                //cursor: pointer;
+
+                
+                > * {
+                    height: 0;
+                    background-size: 100%;
+                    clear: both;
+                    background-repeat: no-repeat;
+
+                    &.sticker {
+                      /*  padding-top: 23.02631578947368%;
+                        max-width: 200px;
+                        margin: 0 auto;*/
+                        top: 60%;
+                        max-width: 150px;    
+                    } 
+                    &.consola {
+                  //      width: 75%;
+                    //    padding-top: 48.42857142857143%;
+                        //max-width: 500px;
+                    }
+                    &.mando {
+                        padding-top: 43.43825665859564%;
+                        margin-top: -22%;  
+                        //width: 257px;
+                        //right: -75px;
+                    }
+                    &.game {
+                       // padding-top: 331px;
+                        right: -82px;
+                    }
+                }
+            }
+            .sanValentinPT,
+            .sanValentin {
+                right: -82px;
+
+                span {
+                    max-width: 110px;
+                }
+            }
+        }
+    }   
+}   
+@media screen and (min-width: 992px) {
+    .aside {
+        .sticker {
+            //padding-top: 15%;    
+        }
+    }
+    .wrap .container-fluid h1 {
+        padding: 50px 0 0 30px;
+    }
+    .gameInfo {
+        .last-days {
+            max-width: 200px;
+            top: -263px;
+            margin: 0;
+            z-index: 10;
+            margin-left: 40px;   
+        }
+    }
+}
+@media screen and (max-width: 991px) {
+    .aside {
+        .sticker {
+            max-width: 155px;
+            padding: 38px 10px 15px 10px;
+            background-size: 60%;
+            background-position: center 15px;
+            color: #fff;
+            font-size: 17px;
+            //margin-top: -66px;
+            margin-top: -25px;
+        }
+    }
+    
+    .container-fluid {
+        margin-bottom: 20%;
+        
+        h1 {
+            font-size: 50px;
+            padding: 25px 100px 0;
+        }
+
+    }
+
+    /* XBOX & PS4 */
+    .wrap {
+        .container-fluid {
+            h1 {
+                text-align: center;
+                font-size: 60px;
+                padding: 25px 10% 0;
+            }
+            h2 {
+                text-align: center;
+                margin-left: 0;
+            }
+            .aside {
+                text-align: center;
+
+                .consola {
+                    width: 54%;
+                    padding-top: 33.428571%;
+                    margin-top: 140px;
+                }
+                .mando {
+                    padding-top: 27%;
+                    margin: 0 auto;
+                    margin-top: -15%;
+                    width: 35%;
+                }
+                .game {
+                    width: 34%;
+                    padding-top: 452px;
+                    right: 66px;
+                }
+                .sticker {
+                    padding-top: 7%;
+                }
+            }
+            #canvas-ps4,
+            #canvas-xbox {
+                width: 150%;
+                //top: -35%;
+                top: 0;
+                left: -75%;
+            }
+            .sanValentinPT,
+            .sanValentin {
+                right: 82px;
+
+                span {
+                    max-width: 110px;
+                }
+            }
+        }
+    }
+     /** san valentin **/
+    
+    .container-fluid {
+        margin-bottom: 5% !important;
+        
+        .sanValentinPT,
+        .sanValentin {
+            max-width: 110px;
+            margin: 0 auto;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .last-days {
+        max-width: 220px;
+        top: auto;
+    }
+    .container-fluid h1 {
+        font-size: 46px;
+        padding: 40px 40px 0;
+    }
+    .aside {
+        &.xbox {
+            .sticker {
+                margin-left: 15px;
+            } 
+        } 
+        &.ps4 {
+            .sticker {
+                margin-right: 15px;
+            }   
+        }   
+        .sticker {
+            max-width: 120px;
+        }
+        
+    }
+    .wrap {
+        .container-fluid {
+            .aside {
+                .game {
+                    right: 0px;
+                }
+                .mando {
+                    width: 35%;
+                    padding-top: 31%;
+                    margin-top: -17%;
+                }
+                .sticker {
+                    top: 75%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .container-fluid{
+        h1 {
+            font-size: 39px;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: .5px;
+        }
+    }
+    .aside {
+        margin-top: 25px;
+        
+        .sticker {
+            background-position: center 10px;
+            padding: 30px 10px 10px 10px;
+            font-size: 15px;
+        /*    width: 100px;
+            position: absolute;
+            bottom: -30px;
+            left: 30%;*/
+        }
+        .consola {
+            width: 65%;            
+        }
+        .mando {
+            margin-top: -20%;
+            width: 70%;
+        }
+        .game {
+            width: 57%;
+            top: 15px;
+        }
+    
+        &.xbox {   
+            .consola {
+                @include bgimage($img_name4, "m");
+                margin-right: 20%;
+            }
+            .mando {
+                @include bgimage($img_name3, "m");
+                margin-left: 20%;
+                padding-top: 60%;
+            }
+            .game {
+                right: -4%;
+            }
+        }
+        &.ps4 {
+            .consola {
+                @include bgimage($img_name2, "m");
+                margin-left: 35%;
+            }
+            .mando {
+                @include bgimage($img_name1, "m");
+                margin-right: 20%;
+                padding-top: 60%;
+            }
+            .game {
+                left: 7%;
+            }
+        }
+    }
+
+    
+    /* XBOX & PS4 */
+    .wrap {
+        .container-fluid {
+            h1 {
+                font-size: 39px;
+                padding: 40px 50px 0;
+            }
+            h2 {
+                font-size: 18px;
+                font-weight: 300;
+                letter-spacing: .5px;
+            }
+            .aside {
+                .consola {
+                    width: 42%;
+                    padding-top: 57.428571%;
+                    margin-top: 90px;
+                    margin-left: 0;
+                }
+                .mando {
+                    padding-top: 37.438257%;
+                    margin: -32% auto 0;
+                    width: 50%;
+                }
+                .game {
+                    width: 43%;
+                    padding-top: 350px;
+                    right: 10%;
+                    top: -70px;
+                }
+                .sticker {
+                    position: relative;
+                    margin: 0 auto;
+                    max-width: 150px;
+                    padding-top: 6.026316%;
+                    left: auto;
+                    bottom: 0 !important;
+                }
+                &.ps4 {
+                   /* .mando {
+
+                    }*/
+                    .consola {
+                        @include bgimage($img_name2b, "m");
+                    }
+                }
+            }
+        }
+        #canvas-ps4,
+        #canvas-xbox {
+            width: 200%;
+            top: 0;
+            left: -100%;
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    .wrapper {
+        margin-bottom: 60px;
+        min-height: 170px;
+
+    }
+    .last-days {
+        top: 87px;
+        max-width: 150px;
+    }
+    .gameInfo {
+        .last-days {
+            top: auto;
+        }
+    }
+    .container-fluid {
+        h1 {
+            font-size: 24px;
+            padding: 45px 0 0;
+        }
+    }
+    .aside {
+        margin-top: 0px;
+        .consola {
+            padding-top: 69%;
+        }
+        .mando {
+            margin-top: -27%;
+            padding-top: 33.438257%;
+        }
+        &.xbox {
+            .sticker {
+                bottom: -85px !important;
+                position: absolute;
+                left: 0%;
+                width: 100%;
+            }
+        }
+        &.ps4 {
+            .sticker {
+                bottom: -85px !important;
+                position: absolute;
+                right: 0%;
+                width: 100%;
+            }
+        }
+    }
+        
+    /* XBOX & PS4 */
+    .wrap {
+        .container-fluid {
+            h1 {
+                font-size: 32px;
+                padding: 40px 30px 0;
+            }
+            h2 {
+                font-size: 16px;
+            }
+            .aside {
+                .consola {
+                    /*width: 54%;
+                    padding-top: 57.428571%;*/
+                    margin-top: 0px;
+                }
+                .mando {
+                    margin-top: -32%;
+                    width: 44%;
+                    padding-top: 35%;
+                    //margin-top: -35%;
+                }
+                .game {
+                    top: -48px;
+                    /*width: 49%;
+                    padding-top: 290px;
+                    right: 10px;*/
+                }
+                .sticker {
+                    max-width: 120px;
+                    padding-top: 8.026316%;
+                    position: relative;
+                    left: auto;
+                    bottom: auto !important;
+                }
+            }
+            #canvas-ps4,
+            #canvas-xbox {
+                width: 200%;
+                //top: -39%;
+                left: -100%;
+            }
+            .sanValentinPT,
+            .sanValentin {
+                right: 28px;
+                bottom: 0;
+            }
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    /* XBOX & PS4 */
+     .wrap {
+        .container-fluid {
+            h1 {
+                font-size: 24px;
+            }
+         }
+     }
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 20px;    
+    }
+}

@@ -1,0 +1,62 @@
+@mixin border-radius($radius) {
+      -webkit-border-radius: $radius;
+         -moz-border-radius: $radius;
+          -ms-border-radius: $radius;
+              border-radius: $radius;
+    }
+    
+    @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+        @if $inset {
+            -webkit-box-shadow:inset $top $left $blur $color;
+            -moz-box-shadow:inset $top $left $blur $color;
+            box-shadow:inset $top $left $blur $color;
+        } @else {
+            -webkit-box-shadow: $top $left $blur $color;
+            -moz-box-shadow: $top $left $blur $color;
+            box-shadow: $top $left $blur $color;
+        }
+    }
+
+    @mixin text-shadow($text-shadow) {
+      -webkit-text-shadow: $text-shadow;
+         -moz-text-shadow: $text-shadow;
+          -ms-text-shadow: $text-shadow;
+              text-shadow: $text-shadow;
+    } 
+    
+    @mixin placeholder {
+        &::-webkit-input-placeholder {@content}
+        &:-moz-placeholder           {@content}
+        &::-moz-placeholder          {@content}
+        &:-ms-input-placeholder      {@content}  
+    }
+
+    @mixin gradient($from, $to) {
+        background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+        background: -moz-linear-gradient(top,  $from, $to);
+        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+    }
+
+    @mixin gradient-horizontal($start-color: #555, $half-color: #FFF, $end-color: #333, $start-percent: 0%, $half-percent: 50%, $end-percent: 100%) {
+      background-image: -webkit-linear-gradient(left, $start-color $start-percent, $half-color $half-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+      background-image: -o-linear-gradient(left, $start-color $start-percent, $half-color $half-percent, $end-color $end-percent); // Opera 12
+      background-image: linear-gradient(to right, $start-color $start-percent, $half-color $half-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient.horizontal(startColorstr='#{ie-hex-str($start-color)}', halfColorstr='#{ie-hex-str($half-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+    }
+
+    @mixin radial-gradient($from, $to) {
+        background: -moz-radial-gradient(center, circle cover, $from 0%, $to 100%);
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $from), color-stop(100%, $to));
+        background: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%);
+        background: -o-radial-gradient(center, circle cover, $from 0%, $to 100%);
+        background: -ms-radial-gradient(center, circle cover, $from 0%, $to 100%);
+        background: radial-gradient(center, circle cover, $from 0%, $to 100%);
+        background-color: $from;
+    } /* example : @include radial-gradient(lighten($color_concurso, 30%), $color_concurso);*/
+
+    @mixin rounded($radius: 0.5em) {
+        -webkit-border-radius: $radius; 
+        -moz-border-radius: $radius;
+        border-radius: $radius;
+    }

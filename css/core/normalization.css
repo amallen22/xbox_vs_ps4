@@ -1,0 +1,10 @@
+.ui-dialog .ui-widget-header {display: none}
+.ui-widget-overlay {background: black; z-index: 1000!important ; opacity: 0.5; filter:Alpha(Opacity=50)}
+.ui-dialog {z-index: 1000!important ;}
+.elegirciudad {display: block; padding: 8px 10px; cursor: pointer}
+.elegirciudad:hover {background: #ddd}
+.elegirciudad, .elegirciudad:hover {text-decoration: none}
+.dark {background: #ccc}
+.clear {background: #eaeaea}
+.notlisted {margin: 10px 0}
+.otrapob {border: 1px solid #888; width: 222px; padding: 4px}

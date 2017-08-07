@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <!-- Chrome, Firefox OS y Opera -->
+    <meta name="theme-color" content=""/>
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content=""/>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <title>Gana una XBOX</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!--[if lt IE 9]>
+    <script src="js/core/html5shiv.min.js"></script>
+    <script src="js/core/respond.min.js"></script>
+    <![endif]-->
+    <link href="css/core/bootstrap.min.css" rel="stylesheet">
+    <link href="css/core/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/core/animate/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
+</head>
+<body>
+
+
+<canvas id="canvas-xbox"></canvas>
+<section class="gameInfo">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- LEFT BOX -->  
+                <div class="col-xs-12 col-md-6 col-lg-6 content-box">
+                    <h1 class="wow fadeInLeft" data-wow-delay="1.5s">Participa en el sorteo y gana una <span>XBOX</span></h1>
+                    <h2 class="wow fadeInLeft" data-wow-delay="2.5s">Además llévate estos dos juegos: <br /><i>- Call of Duty: Infinite Warfare</i><br /> <i>- Battlefield 1</i></h2>
+                    <div class="aside xbox">
+                        <div class="consola wow fadeInLeft" data-wow-duration="0.8s"></div>
+                        <div class="mando wow bounceInDown" data-wow-delay="0.5s" data-wow-duration="0.5s"></div>
+                        <div class="sticker" data-wow-delay="0s" data-wow-duration="0.9s"></div>
+                        <div class="game wow fadeInDown" data-wow-delay="1s"></div>
+                    </div>
+                    <div class="last-days wow bounce" data-wow-delay="2.8s">
+                        <span></span>
+                    </div>
+                </div>
+            <!-- RIGHT BOX -->  
+<div class="col-xs-12 col-md-6 col-lg-6 form-box wow bounceIn" data-wow-delay="0s">
+    <a id="id3"></a>
+    <div id="title-form">RELLENA ELFORMULARIO PARA PODER PARTICIPAR:</div>
+
+    <div id="geopc-one" title="Confirmar ciudad" style="display: none"></div>
+   <!-- <div id="geopc-multi" title="Elegir ciudad" style="display: none; margin: 10px"></div>-->
+
+    <div class="formContent">
+        <form novalidate="novalidate" id="reg-form" method="post" name="game" role="form" class="stepsOff noLabel">
+            <input type="hidden" name="step" value="1">
+            
+            <fieldset class="setup-content" id="step-1">
+                <div class="gender form-group">
+                    <div class="clearfix">
+                        <div class="col-md-6 col-sm-6 col-xs-6 col_gender">
+                            <div data-toggle="buttons" class="gender_sel">
+                                <label class="label_gender btn btn-default" id="lbl_gender_f">
+                                    <input type="radio" name="form_gender" id="form_gender_f" value="f" checked="checked" />Señora
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 col_gender">
+                            <div data-toggle="buttons" class="gender_sel">
+                                <label class="label_gender btn btn-default" id="lbl_gender_m">
+                                    <input type="radio" name="form_gender" id="form_gender_m" value="m" />
+                                    Señor
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <small id="inputError0" class="error">¿Cómo nos dirigimos a ti?</small>
+                </div>
+                <div class="dataUser clearfix">
+                    <div class="form-group">
+                        <label for="form_firstname" class="control-label">
+                            Nombre
+                        </label>
+                        <div class="controls">
+                            <input type="text" class="form-control" name="form_firstname" id="form_firstname" placeholder="Nombre*" maxlength="50" required="required" />
+                            <small id="inputError1" class="error">Has de introducir tu nombre</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form_lastname" class="control-label">
+                            Apellidos
+                        </label>
+                        <div class="controls">
+                            <input type="text" class="form-control" name="form_lastname" id="form_lastname" placeholder="Apellidos*" maxlength="50" required="required" />
+                            <small id="inputError2" class="error">Has de introducir tus apellidos</small>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <label for="form_email" class="control-label">
+                            Email
+                        </label>
+                        <div class="controls">
+                            <input type="email" class="form-control" name="form_email" id="form_email" placeholder="Email*" maxlength="50" required="required" />
+                            <small id="inputError3" class="error">Has de introducir tu email correctamente</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form_mobile" class="control-label">
+                            Móvil
+                        </label>
+                        <div class="controls">
+                            <input type="number" class="form-control" name="form_mobile" id="form_mobile" placeholder="Móvil*" min="600000000" max="799999999" maxlength="9" required="required" />
+                            <small id="inputError4" class="error">Has de introducir tu número de teléfono móvil</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="selectSteps pull-right">
+                    <button class="btn btn-primary nextBtn btn-lg" id="btnStep1" type="button" >Siguiente</button>
+                </div>
+            </fieldset>
+            <a id="t_and_c"></a>
+            <fieldset class="setup-content" id="step-2">
+                <div class="adress">
+                    <div class="street form-group">
+                        <label for="form_zip" class="control-label">
+                            C.P.
+                        </label>
+                        <div class="controls">
+                            <input type="number" class="form-control" name="form_zip" id="form_zip" placeholder="Código Postal*" maxlength="5" min="01001" max="52999" required="required" onkeyup="checkCP(this,'modal')"  />
+                            <small id="inputError6" class="error">Código postal erróneo</small>
+                            <input type="hidden" name="cp_2" id="cp_2">
+                            <input type="hidden" name="form_city" id="form_city">
+                            <input type="hidden" name="form_province" id="form_province">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form_street" class="control-label">
+                            Calle
+                        </label>
+                        <div class="controls">
+                            <input type="text" class="form-control" name="form_street" id="form_street" placeholder="Calle*" maxlength="30" required="required" />
+                            <small id="inputError5" class="error">Falta el nombre de tu calle</small>
+                        </div>
+                    </div>
+                    <div class="livingData clearfix">
+                        <div class="form-group">
+                            <label for="form_number" class="control-label">
+                                Número
+                            </label>
+                            <div class="controls">
+                                <input type="text" class="form-control" name="form_number" id="form_number" placeholder="Número*" maxlength="5" required="required"/>
+                                <small id="inputError7" class="error">Número de bloque</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form_floor" class="control-label">
+                                Piso
+                            </label>
+                            <div class="controls">
+                                <input type="text" class="form-control" name="form_floor" id="form_floor" placeholder="Piso" maxlength="4"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form_door" class="control-label">
+                                Puerta
+                            </label>
+                            <div class="controls">
+                                <input type="text" class="form-control" name="form_door" id="form_door" placeholder="Puerta" maxlength="4"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             
+            </fieldset>
+            <fieldset class="setup-content" id="step-3">
+                <div class="terms_and_conditions">
+                    <div class="checkbox adult">
+                        <label id="mayorQue" for="form_adult_special" class="">
+                            <input type="checkbox" id="form_adult_special" name="form_adult" required="required" />
+                            <span>Declaro ser mayor de 18 años y acepto las Condiciones de Uso&#185; de "el Organizador" así como las de los Patrocinadores&#178;.
+                            </span>
+                        </label>
+                    </div>
+                    <div id="nacimiento" style="display: none;">
+                        <p><b>Fecha de nacimiento</b></p>
+                        <div class="row">
+                            <div class="form-group col-xs-4 col-sm-3 col-md-3 col-lg-2"> <!--has-error-->
+                                <label for="form_birth_day" class="control-label">
+                                    Día
+                                </label>
+                                <div class="controls">
+                                    <div class="wrappedSelect">
+                                        <select id="form_birth_day" name="form_birth_day" class="form-control" placeholder="Día" required="required">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="...">...</option>
+                                       </select>
+                                    </div>
+                                    <small id="inputError8" class="error">Día de nacimiento</small>
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                                <label for="form_birth_month" class="control-label">
+                                    Mes
+                                </label>
+                                <div class="controls">
+                                    <div class="wrappedSelect">
+                                        <select id="form_birth_month" name="form_birth_month" class="form-control" placeholder="Mes" required="required">
+                                            <option value="">Enero</option>
+                                            <option value="">Febrero</option>
+                                        </select>
+                                    </div>
+                                    <small id="inputError9" class="error">Mes de nacimiento</small>
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                                <label for="form_birth_year" class="control-label">
+                                    Año
+                                </label>
+                                <div class="controls">
+                                    <div class="wrappedSelect">
+                                        <select id="form_birth_year" name="form_birth_year" class="form-control" placeholder="Año" required="required">
+                                            <option value="">1985</option>
+                                            <option value="">1984</option>
+                                        </select>
+                                    </div>
+                                    <small id="inputError10" class="error">Año de nacimiento</small>
+                                </div>
+                            </div>  
+                            <div class="form-group col-xs-12 col-sm-3 col-md-3 col-lg-4" id="nationality">
+                                <p class="labelFake"><b>Nacionalidad</b></p>
+                                <label for="form_nationality" class="control-label">Nacionalidad</label>
+                                <div class="controls">
+                                    <div class="wrappedSelect">
+                                        <select id="form_nationality" name="form_nationality" class="form-control" placeholder="Nacionalidad" required="required">
+                                            <option value="">Italy</option>
+                                        </select>
+                                    </div>
+                                    <small id="inputError11" class="error">¿Cuál es tu nacionalidad?</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <label for="form_terms" id="termsandcond">
+                            <input name="form_terms" id="form_terms" type="checkbox" required="required" />
+                            <span> Acepto de forma expresa que mis datos sean tratados para la gestión de la promoción y para su uso comercial/publicitario por parte del titular de la web, los Patrocinadores&#178;, y/o, en su caso, de terceros. En todo caso podré ejercer mis derechos de acceso, rectificación, cancelación y oposición en los términos expuestos en las respectivas Condiciones de Uso&#185;. </span>
+                        </label>
+                    </div>
+
+              <div class="btn-leadContent">
+                    <button class="btn btn-primary nextBtn btn-lg" type="button"  id="btnStep3" style="display:none" >Siguiente</button>
+                    <button border="0" name="btn" class="btn extBtn leadBtn btn-lg" data-loading-text="Enviando datos" type="button"  id="submitButton">Participa ahora</button>
+                </div>
+                <div class="infoUser">
+                    <a class="legal" id="modal-condiciones" href="#modal-container-1" role="button" data-toggle="modal" data-target="#modal-container-1">&#185; Ver condiciones de Uso</a>  |  <a class="legal" id="modal-patros" href="#modal-container-2" role="button" data-toggle="modal" data-target="#modal-container-2">&#178; Ver patrocinadores</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+
+
+<div class="modal" id="modal-container-1" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog container" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Condiciones de uso
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                <span style="font-size: 15px;"><p class="MsoNormal" style="line-height: normal;"><span style="font-family: Arial, sans-serif;">El organizador de esta promoción comercial gratuita es:<o:p></o:p></span></p><p class="MsoNormal" style="line-height: normal;"><span style="font-family: Arial, sans-serif;">Hello Mail Interactive GmbH (en adelante "El Organizador")<br><br>Sternstraße 106<br><br>20357 Hamburg, Alemania.<br><br>Registrado en el registro mercantil de Hamburgo bajo el número de registro HRB 90455.<br><br>NIF: DE813559749<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 12pt; line-height: normal;"><span style="font-family: Arial, sans-serif;">Esta promoción se realiza en colaboración con:<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;">Hearst Magazines, S.L. (en adelante, “El Proveedor”)<br>c/ Santa Engracia, nº23<br>28010 Madrid<br>NIF: B31008212<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;"><br><br>“El Organizador” y “El Proveedor” llevan a cabo la promoción comercial gratuita de acuerdo con las siguientes condiciones:<br><b><br>1. Participación</b><br><br>Podrán participar en "PROMOCIÓN ELLE MAGAZINE-JOCCA" todas las personas físicas mayores de 18 años con residencia en&nbsp;España, Alemania, Austria y/o Portugal. Quedan excluidas de la anterior afirmación aquellas personas que tengan alguna vinculación, ya sea mercantil o laboral, con "El Organizador" y/o "el Proveedor". Así, quedan excluidos entre otros los empleados de ambas compañías, sus representantes legales y mercantiles, y los promotores de las agencias de publicidad que poseen un acuerdo con ellas. Dicha prohibición se hace extensiva a los familiares directos de los mismos. Si incumpliendo esta reglamentación, participase y ganase algún premio alguno de los sujetos que tiene vedada su participación, no se hará efectiva la entrega del premio, considerándose nula tal participación. Asimismo, serán expulsados de la promoción aquellos participantes que no den cumplimiento a las normas de funcionamiento de la promoción.<br>"PROMOCIÓN ELLE MAGAZINE-JOCCA" es una denominación comercial de fantasía que no presupone la naturaleza jurídica de la promoción ni del premio obtenido.&nbsp;</span><span arial",sans-serif;mso-fareast-font-family:="" "times="" new="" roman";mso-fareast-language:es"=""><o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;">"El Organizador" &nbsp;no se atribuye reconocimiento o soporte alguno de las&nbsp;</span><span style="font-family: Arial, sans-serif;">&nbsp;marcas&nbsp;"ELLE MAGAZINE" y/o "JOCCA",</span><span style="font-family: Arial, sans-serif;">, recordando que se encuentran registradas por terceros.</span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><font face="Arial, Verdana" style="font-size: 13.3333px;"><span style="font-size: 15px;">Gracias a la&nbsp;</span></font><font face="Arial, sans-serif" style="font-size: 13.3333px;"><span style="font-size: 15px;">"PROMOCIÓN&nbsp;</span></font><span style="font-family: Arial, sans-serif;">ELLE MAGAZINE-JOCCA</span><font face="Arial, sans-serif" style="font-size: 13.3333px;"><span style="font-size: 15px;">" los usuarios podrán participar cada año en la "PROMOCIÓN FINAL DE AÑO" que "El Organizador" realiza, con carácter gratuito, entre todos los participantes de promociones anteriores que continúen&nbsp;como usuarios activos.&nbsp;</span></font></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><b><span style="font-family: Arial, sans-serif;">2. Validez</span></b><span style="font-family: Arial, sans-serif;"><br><br>Sólo se considerarán participaciones válidas aquellas que sean el resultado de procesos de inscripción correctos, permitiéndose una única participación por persona, que deberá suministrar todos los datos pertinentes con información veraz.<br>Asimismo, sólo se considerarán inscripciones válidas y, en consecuencia, participantes, a aquellas personas que hayan respondido afirmativamente el procedo de confirmación de inscripción (doble opt-in) que "El Organizador" tiene implementado.<br>La “PROMOCIÓN ELLE MAGAZINE-JOCCA” se realiza en colaboración con la sociedad española Hearst Magazines, S.L.&nbsp;Para&nbsp;para poder optar al premio o premios que deriven de “PROMOCIÓN ELLE MAGAZINE-JOCCA” resulta imprescindible que el participante no se esté dado de baja ni ante el “Organizador” ni ante Hearst Magazines, S.L. en el momento de realizar el sorteo y/o al finalizar la promoción.<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;"><br>En el supuesto de que una misma persona se inscriba más de una vez con diferentes datos, su participación (todas ellas) a efectos de obtención del premio quedará invalidada.<br><br>En cualquier caso, es importante destacar que, como visitante, no hay obligación de proporcionar información personal para utilizar el sitio web. Este sitio web sólo recopila información personal que es específica y voluntariamente proporcionada por los visitantes.<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:="" "times="" new="" roman";color:#333333;mso-fareast-language:es"="">La Comisión Europea facilita una plataforma gratuita de resolución de litigios en línea, la cual se encuentra disponible en enlace:&nbsp;http://ec.europa.eu/consumers/odr/. Sin perjuicio de los derechos que les asistan, los consumidores podrán someter sus reclamaciones a través de la plataforma de resolución de litigios en línea.<br></span><span style="font-family: Arial, sans-serif;"><br><b><br>3. Mecánica de Funcionamiento</b><br><br>La promoción "PROMOCIÓN ELLE MAGAZINE-JOCCA" ofrecido por "El Organizador" posee carácter gratuito, por lo que la participación en el mismo no requiere el pago por concepto alguno, fuera de los propios de la conexión a Internet. Las personas que deseen participar en "PROMOCIÓN ELLE MAGAZINE-JOCCA" deberán completar la ficha de inscripción rellenando, con información veraz, los campos dispuestos a tal efecto.&nbsp;<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;">Cada participación generará un número interno exclusivo no modificable ulteriormente el cual automáticamente quedará indisolublemente unido a cada participación recibida. Iniciándose en el número 1, y finalizando la promoción al llegar al número 9.000 (o con la llegada de la fecha de 30 de septiembre de 2017 -CET-, lo que antes acontezca), dicha numeración interna tiene carácter consecutivo respecto de la anterior. Todo participante, directamente o mediante petición gratuita realizada a "El Organizador" podrá conocer el número de participación que le ha sido automáticamente asignado.<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;"><o:p>&nbsp;</o:p></span></p></span><span style="font-size: 15px;"><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;">El procedimiento aleatorio de designación los tres números determinados provisionalmente como ganadores podrá realizarse bien t</span><span style="font-family: Arial, sans-serif;">ras el cierre de nuevas participaciones,o bien a medida que se vayan generando determinados niveles de participación en la promoción.<br>Las participaciones vinculadas a los números determinados provisionalmente como ganadores serán contactadas por correo electrónico y telefónicamente para darles a conocer el premio obtenido y los detalles vinculados a la entrega del mismo.<br>De no ser posible el contacto realizado al resultar, por ejemplo, incorrectos o falsos los datos facilitados en el momento de inscripción o por cualquier otro incumplimiento de las presentes bases, se considerará invalidada/s tal/es participación/ones, siendo considerado como participación ganadora sustitutiva aquella que sea inmediatamente posterior a la invalidada.<br>Si habiéndose contactado con la persona considerada como ganadora ésta no se comunicara con la empresa organizadora en un plazo máximo de 1 semana para reclamar o gestionar la entrega del premio, el mismo se podrá considerar desierto.<br>Será “El Organizador” quien gestione y lleve a cabo, directa o indirectamente, todo el procedimiento de selección de los ganadores, determinación de su validez, comunicación y demás aspectos de la promoción, salvo la entrega de los premios que se llevará a cabo por “El Proveedor”, frente al cual deberá tramitarse cualquier incidencia vinculada a los mismos (cambio en la dirección de suscripción, ejercicios de los derechos de garantía u otros).<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;">El número de participación obtenido en "<span style="font-family: Arial, sans-serif;">PROMOCIÓN&nbsp;</span><span style="font-family: Arial, sans-serif;">ELLE MAGAZINE-JOCCA</span><span style="font-family: Arial, sans-serif;">" no será tenido en consideración&nbsp;</span><span style="font-family: Arial, sans-serif;">en la "PROMOCIÓN FINAL DE AÑO"</span><span style="font-family: Arial, sans-serif;">&nbsp;que tiene lugar anualmente y que se rige por sus propias condiciones.</span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;"><o:p>&nbsp;</o:p></span><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><b><span style="font-family: Arial, sans-serif;">4. Premios</span></b><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 12pt; line-height: normal;"><span style="font-family: Arial, sans-serif;"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;">El premio a obtener en esta promoción comercial gratuita es un pack formado por:<br>• Suscripción por espacio de un año a la edición impresa de la revista ELLE Magazine<br>• 1 Olla eléctrica programable de la marca JOCCA, modelo ref. 5790.<br>“El Proveedor” ofrece 3 packs como el descrito como premios a obtener por los participantes (un solo premio/pack por participante ganador).<br>Las imágenes mostradas en la página web, aún cuando pretenden dar un reflejo fiel, no son imágenes contractuales respectos del premio a obtener.&nbsp;<br>“El Proveedor”, de acuerdo a lo establecido en sus bases, se reserva el derecho a sustituir los premios ofertados por otros de similares características y/o de igual valor. En ningún caso será posible sustituir el premio/regalo por su valor en metálico.<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;"><o:p>&nbsp;</o:p></span><span style="font-family: Arial, sans-serif;">Serán por cuenta de los agraciados las eventuales repercusiones fiscales que pudieran tener los premio obtenidos, así como eventuales obligaciones accesorias que pudieran derivar de estos.&nbsp;</span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;"><b><br>5. Notificación y Entrega del Premio</b><br><br>La entidad organizadora notificará la obtención del premio obtenido a cada ganador a través de E-mail que se haya facilitado en el momento de la inscripción, siendo necesaria una respuesta confirmando la voluntad de recibir dicho premio, que consistirá en un formulario que se le pondrá a disposición, en el que ratificará su voluntad de recibir el premio y en el que confirmará su nombre, dirección y el número del pasaporte y/o documento nacional de identidad, así como el resto de datos que sean necesarios para hacerle entrega del premio obtenido. Una fotocopia del pasaporte y/o documento de identidad válido habrá de ser adjuntada al formulario. En este formulario el ganador también ratificará su conformidad sobre las repercusiones fiscales que resulten de aplicación (incluyendo las que sean por cuenta del agraciado), las cuales, si fuera necesario, le podrían ser reclamadas. El formulario ha de estar debidamente firmado y aportar una fotografía del premiado.<br>El premio solo será entregado al agraciado.<br>La responsabilidad de Hello Mail Interactive GmbH para con los ganadores finaliza con la notificación, a través de e-mail, del premio obtenido.<br>Los ganadores están informados y consienten que en el apartado Ganadores de la Web de PREMIOSFACILES.COM se publique su foto, nombre y apellido, lugar de procedencia, y el premio percibido.<br><br><b>6. Comunicaciones Comerciales</b><br><br>Los participantes del la promoción comercial gratuita "PROMOCIÓN ELLE MAGAZINE-JOCCA" están informados y dan su autorización para que sus datos puedan ser tratados con fines publicitarios y recibir, en consecuencia, mensaje comerciales de "El Organizador" y por parte de las empresas que patrocinan la promoción.<br>La identidad de los patrocinadores podrá conocerse en todo momento en la dirección web "<a href="http://admin.premiosfaciles.com/http://www.premiosfaciles.com/concurso-suscripcion-revista-elle/lp/default/patrocinadores" target="_blank"><span style="color: blue;">http://www.premiosfaciles.com/concurso-suscripcion-revista-elle/lp/default/patrocinadores</span></a>".<br>Esta comunicación se podrá realizar a través de todos los canales proporcionados por el participante: e-mail, SMS, teléfono, vía postal o mediante el uso de aplicaciones informáticas y redes sociales. Dichas comunicaciones podrán, en su caso, incorporar cookies/beacons/marcadores que, anónimamente y sin afectación a dato de carácter personal alguno, permitan a "El Organizador" y/o a las empresas con las que éste colabora, una mejor interlocución con el participante. La adquisición de la condición de usuario registrado implica la aceptación de estas condiciones de participación y la mencionada autorización y consentimiento.<br><br>Asimismo, salvo comunicación en contra, podrá recibir por cualquier medio de entre los descritos información y publicidad de otras empresas o entidades relacionadas sobre los sectores siguientes que pueden ser de su interés:<o:p></o:p></span></p><table class="MsoNormalTable" border="0" cellpadding="0" width="100%" style="width: 775px;"><tbody><tr><td width="33%" style="width: 253px; padding: 0.75pt;"><ul type="disc"><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Telecomunicaciones<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Pasatiempos<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Juegos<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Moda<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Droguería<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Juguetería<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Música<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Mobiliario<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Salud<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Cosmética<o:p></o:p></span></li></ul></td><td width="33%" style="width: 254px; padding: 0.75pt;"><ul type="disc"><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Financiero<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Ocio<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Formación<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Automoción<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">ONGs<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Consultoría<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Viajes<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Seguros&nbsp;<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Textil<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Belleza<o:p></o:p></span></li></ul></td><td width="33%" style="width: 254px; padding: 0.75pt;"><ul type="disc"><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Editorial<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Esoterismo<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Gran Consumo<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Energía<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Coleccionismo<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Agua<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Vídeos<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Limpieza<o:p></o:p></span></li><li class="MsoNormal" style="line-height: normal;"><span arial",sans-serif;mso-fareast-font-family:"times="" new="" roman";="" mso-fareast-language:es"="">Alimentación<o:p></o:p></span></li></ul></td></tr></tbody></table><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;">Igualmente podrá recibir ofertas comerciales de otras empresas o entidades junto con los premios obtenidos.<br>Los participantes podrán revocar total o parcialmente y en cualquier momento, el consentimiento prestado al tratamiento de sus datos y a la recepción de comunicaciones publicitarias a través de una notificación al correo electrónico (baja@premiosfaciles.com). Una revocación total comportará asimismo automáticamente la cancelación de los datos del participante de los ficheros titularidad de "El Organizador", y la pérdida del derecho a participar en PREMIOSFACILES.COM.<br><br>Adicionalmente a lo que prevé la legislación aplicable al organizador de la promoción comercial, todos aquellas personas cuyos datos personales sean objeto de tratamiento, podrán ejercitar gratuitamente las acciones derivadas de los derechos de oposición, acceso, rectificación, cancelación y oposición en idéntica forma y manera a la que, en su caso, correspondiese en virtud de su propia normativa nacional.<br><br>Estos derechos podrán ser ejercitados a través de una de las siguientes vías:<br><br>• Por escrito, enviando su solicitud, junto la documentación acreditativa de su identidad, a la siguiente dirección:<br>Hello Mail Interactive GmbH<br>Sternstraße 106<br>20357 Hamburg, Alemania.<br>• Alternativa y opcionalmente, al servicio de atención externo para el mercado portugués e hispanohablante, ofrecido por:<br>WEBPILOTS ESPAÑA, S.L.<br>c/ Pellaires, 30-38, nave "B"<br>08019 Barcelona, España<br><br><b>7. Política de Privacidad</b><br><br>"El Organizador" protegerá sus datos de conformidad con la normativa sobre protección de datos alemana (TDDSG).<br>Los datos personales recogidos son, en primer lugar: Nombre, Apellidos, Dirección, Fecha de nacimiento, E-mail, Teléfono fijo y móvil y país de procedencia. Son datos de necesaria facilitación para poder participar y, en su caso, poder hacerle entrega del premio.<br>Posteriormente podrán solicitársele nuevos datos (referentes a su profesión, estado civil, hobbies y otros datos referentes a sus hábitos de consumo) cuyo objeto es conocerle mejor, conocer sus preferencias para que nuestros promotores puedan hacerle llegar publicidad e información comercial.<br>La comunicación de datos falsos le inhabilita para poder percibir premio alguno.<br></span><span style="font-family: Arial, sans-serif;">Habida cuenta, entre otros aspectos, la participación del usuario tanto de la promoción&nbsp;</span><span style="font-family: Arial, sans-serif;">"PROMOCIÓN&nbsp;</span><span style="font-family: Arial, sans-serif;">ELLE MAGAZINE-JOCCA</span><span style="font-family: Arial, sans-serif;">" como de</span><span style="font-family: Arial, sans-serif;">&nbsp;la "PROMOCIÓN FINAL DE AÑO" que tiene lugar cada año, l</span><span style="font-family: Arial, sans-serif;">os datos facilitados se mantendrán hasta que, en su caso, se manifieste lo contrario por parte del usuario.</span><span style="font-family: Arial, sans-serif;">&nbsp;</span><span style="font-family: Arial, sans-serif;">Tales datos facilitados serán incorporados a uno o varios ficheros titularidad de "El Organizador" y/o de los patrocinadores&nbsp;<a href="http://admin.premiosfaciles.com/http://www.premiosfaciles.com/concurso-suscripcion-revista-elle/lp/default/patrocinadores" target="_blank"><span style="color: blue;">http://www.premiosfaciles.com/concurso-suscripcion-revista-elle/lp/default/patrocinadores</span></a>&nbsp;y terceras empresas, pudiendo asimismo ser cedidos a terceros actores de&nbsp;los sectores de actividad indicados en el apartado anterior, con la finalidad de poderte remitir, por cualquier canal, (postal, electrónico, telefónico, informático e Internet), publicidad y promociones comerciales de los sectores descritos en el apartado VI anterior. Mediante la aceptación de las presentes condiciones, se presta el consentimiento para poder tratar tales datos con fines comerciales y las cesiones de sus datos a las empresas con las que se concluyan acuerdos de colaboración, para el cumplimiento de fines directamente relacionados con sus funciones legítimas y siempre teniendo como objetivo la mejor prestación del servicio, consintiendo inequívocamente el usuario que dichos tratamientos y cesiones se puedan realizar eventualmente mediante transferencias internacionales a terceros que se encuentren ubicados en países que ofrezcan un nivel de protección distinto al que rige a "El Organizador".<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;">Los ficheros se hallan ubicados en el servidor de "El Organizador" que cuenta con las máximas medidas de seguridad exigidas por la normativa alemana sobre protección de datos.&nbsp;<br>"El Organizador", de conformidad con la normativa aplicable, guardará los datos de carácter personal que haya recabado, y adoptará las medidas necesarias para evitar su alteración, pérdida, tratamiento o acceso no autorizados.<br>Frente a "El Organizador", adicionalmente a lo que prevé la legislación que le es aplicable al organizador, todos aquellas personas cuyos datos personales sean objeto de tratamiento, podrán ejercitar gratuitamente las acciones derivadas de los derechos de oposición, acceso, rectificación, cancelación y oposición en idéntica forma y manera a la que, en su caso, correspondiese en virtud de su propia normativa nacional. Podrán hacerlo en cualquier momento, solicitándolo por escrito a: Hello Mail Interactive GmbH, Sternstraße 106, 20357, Hamburgo (Alemania). Alternativa y opcionalmente, al servicio de atención externo para el mercado portugués e hispanohablante, ofrecido por: WEBPILOTS ESPAÑA, S.L. c/ Pellaires, 30-38, nave "B" 08019 Barcelona, España.<br>O a través de la siguiente dirección de correo electrónico: baja@premiosfaciles.com Además tendrá el derecho de revocar el consentimiento prestado para la cesión de sus datos.<br>A través del acceso a "mi perfil" podrá ver y modificar, en todo momento, los datos que ha suministrado a "El Organizador". Asimismo, podrá cancelar, en cualquier momento, su registro en "PROMOCIÓN ELLE MAGAZINE-JOCCA", realizando una petición de cancelación a través del e-mail baja@premiosfaciles.com. Una vez se reciba dicha petición se procederá de manera inmediata a a la cancelación de sus datos, bloqueándose los mismos y manteniéndose únicamente, en su caso, a los efectos de asegurar el cumplimiento de obligaciones legales o contractuales.<br>En el futuro si Usted lo desea puede volver a solicitar nuestros servicios, iniciando un nuevo registro.<br>Si precisa más información acerca de la protección de datos de carácter personal, envíenos un e-mail a baja@premiosfaciles.com, y estaremos encantados de ayudarle.<br>Asimismo, los datos personales facilitados pueden ser sometidos a procesos de normalización y depuración para el adecuado mantenimiento de la base de datos y evitar, de este modo, enviarle ofertas redundantes o no adecuadas a los intereses indicados, pudiendo, en su caso, también ser utilizados para la elaboración de perfiles a los únicos efectos de poder prestar un mejor servicio y atender sus preferencias adecuadamente.<br><br><b>8-Cookies</b><br><br>El acceso a este website puede implicar la utilización de cookies. Las cookies son pequeñas cantidades de información que, por tiempo limitado, se almacenan en el disco duro de su ordenador y que únicamente pueden ser leídas por el servidor que las almacenó. Su función es exclusivamente la de mejorar la usabilidad del servicio, facilitando su utilización de "LA WEB".<br><br>Las cookies que, en su caso, pudieran usarse en "LA WEB" no tienen naturaleza publicitaria. Su naturaleza es de orden técnico, analítico y de personalización. Mediante las mismas puede cuantificarse el número de usuarios y así realizar la medición y análisis estadístico de la utilización que hacen los usuarios del servicio ofertado, al tiempo que permiten adecuar el servicio a las características del usuario y su terminal.<br>Ninguna cookie permite que pueda contactarse con el número de teléfono del usuario, su dirección de correo electrónico o con cualquier otro medio de contacto. Ninguna cookie puede extraer información del disco duro del usuario o robar información personal. Aquellos usuarios que no deseen recibir cookies o quieran ser informados de su fijación pueden configurar su navegador a tal efecto. Además, Ud. podrá borrar del disco duro de su ordenador, cada vez que lo desee, las mencionadas cookies.<br><br>Tiene más información sobre la Política de Cookies de "LA WEB" aquí<br><br><br><b>9. Expulsión de la Promoción</b><br><br>"El Organizador" se reserva el derecho de expulsión de participantes por razones objetivas y justificadas. Esto será válido para aquellos participantes que se inscriban en la promoción con más de un E-mail o que utilicen datos de terceras personas, práctica que el organizador no tolerará. Asimismo serán expulsados aquellos participantes que infrinjan las Condiciones de Participación o intenten modificar el correcto funcionamiento de la promoción.<br>La empresa organizadora enviará un email de confirmación para asegurar la adecuación de los registros y datos suministrados, posibilitar la corrección de cualquier error, y confirmar el consentimiento y voluntad de participación.<br>Dicho email incluirá una copia de las presentes condiciones generales para su mejor constancia y almacenaje por parte del participante.<br><br><b>10. Modificación y Finalización</b><br><br>"El Organizador" se reserva el derecho a modificar el contenido de su página Web y las condiciones de participación de la promoción por causas justificadas y salvaguardando los derechos de los participantes. Del mismo modo, "El Organizador" se reserva el derecho a terminar la promoción en cualquier momento o a extenderla por un período no superior al 50% inicialmente previsto. Ninguna de ambas circunstancias resulta perjudicial para los usuarios. En cualquier caso, la puesta en marcha de las mencionadas variaciones se llevará acabo previo aviso a los participantes.<br><br><b>11. Propiedad Intelectual e Industrial</b><br><br>Este website y los contenidos que alberga se encuentran protegidos por las leyes de Propiedad Intelectual. No podrán ser objeto de explotación, reproducción, distribución, modificación, comunicación pública, cesión o transformación. El acceso a este website no otorga a los usuarios derecho, ni titularidad alguna sobre los derechos de propiedad intelectual de los contenidos que alberga este website.<br>El contenido de este website puede ser descargado al terminal del usuario (download), siempre que sea para su uso privado y sin ningún fin comercial; por lo tanto no podrá explotar, reproducir, distribuir, modificar, comunicar públicamente, ceder, transformar o usar el contenido de este website con fines públicos o comerciales.<br>La empresa organizadora no transfiere a los usuarios la propiedad de su software. El usuario es el propietario del soporte en el cual el software es grabado. La empresa organizadora retiene todos los derechos de propiedad industrial e intelectual incluyendo el software. Si el usuario transfiere software de este website a su terminal, no podrá diseccionarlo para su estudio, o descompilarlo, traducir la versión del código objeto original o su lenguaje a otro código o lenguaje.<br>El nombre comercial, las marcas, logo, productos y servicios que contiene este website se encuentran protegidos por ley.<br>La empresa organizadora se reserva la posibilidad de ejercer las acciones judiciales que correspondan contra los usuarios que violen o infrinjan los derechos de propiedad intelectual e industrial propios o de terceros.<br>Los elementos gráficos utilizados en la promoción "PROMOCIÓN ELLE MAGAZINE-JOCCA" han sido creados por "EL ORGANIZADOR" u obtenidos de fuentes que garantizan su plena adecuación legal para el uso realizado, indicándose el origen de los mismos. En cualquier caso, en el supuesto de que considerara que alguno de tales elementos gráficos utilizados infringe cualquier derecho del que resultase titular, por favor no dude en ponerse en contacto con "EL ORGANIZADOR" mediante correo electrónico a la dirección info@premiosfaciles.com, garantizándole una ágil respuesta y una pronta resolución de cualquier incidencia que pudiera producirse.<br><br><b>12. Limitación de la Responsabilidad</b><br><br>"El Organizador" no responderá ante eventuales problemáticas derivadas del anómalo funcionamiento de terceros involucrados en el proceso técnico del servicio PREMIOSFACILES.COM. Así, no responderá ante los fallos habidos en las redes de telecomunicaciones, en los servicios prestados por proveedores de Internet, en los colapsos y cortes en las líneas telefónicas, fallos en el programa de validación, etc. "El Organizador" no responderá por la pérdida de datos transmitidos incorrectamente, ni por aquellos transmitidos fuera de plazo. "El Organizador" no será responsable de la entrega de los premios cuando haya realizado todo el proceso de entrega de los mismos correctamente y la incidencia sea causada por terceras empresas, aduanas u otras autoridades.<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-family: Arial, sans-serif;"><br><br>¿Tiene alguna pregunta?<br><br>Escríbanos un E-mail a info@PREMIOSFACILES.COM.&nbsp;<o:p></o:p></span></p><p></p><p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal"></p><p class="MsoNormal"><span arial",sans-serif"=""><o:p>&nbsp;</o:p></span></p></span></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Cerrar
+                </button> 
+           </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="modal-container-2" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog container" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Patrocinadores
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div id="partnersloading" style="text-align: center">
+                    <img style="margin-top: 50px;" class="logoSpin" id="logoSpinPatros" src="http://www.premiosfaciles.com/pf2/images/default/trebol-pf_low.png" width="36" height="36">        
+                </div>
+                <iframe id="partnersframe" src="" width="100%" height="600" frameBorder="0"></iframe>
+                <div class="noPartners">
+                    Si, por cualquier motivo, desea que sus datos NO LLEGUEN a alguno de los patrocinadores de la presente promoción, pulse
+                    <a href="sponsorsEdit=true" target="_blank">aquí</a>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Cerrar
+                </button> 
+           </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal cities list display -->
+<div class="modal" id="modal-choose-city" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog container" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Población
+                </h4>
+            </div>
+            <div class="modal-body" id="modal-choose-city-body">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Cerrar
+                </button> 
+           </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Modal Submit -->
+<div id="modalSubmit" class="modal" role="dialog" id="myModal" tabindex="-1" data-keyboard="false" data-backdrop="static">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+        <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h2>Estamos validando tus datos</h2> 
+                    <p>Puede tardar unos segundos, no te retires</p> 
+                    <br />
+                    <img class="logoSpin" src="images/default/trebol-pf_low.png" width="36" height="36">
+                    <br />
+                    <img class="logoSpinShadow" src="images/default/trebolShadow.png" width="48" height="11">
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+<script src="js/core/jquery-1.11.1.min.js"></script>
+<script src="js/core/bootstrap.min.js"></script>
+<script src="js/core/icheck.js"></script>
+<script src="js/core/functions.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/default_dynamic/general.js"></script>
+
+<!-- ANIMATION WOW -->
+<script src="js/core/wow/wow.min.js"></script>
+<script src="js/core/granim/granim.min.js"></script>
+<script>
+    $("body").addClass("wrap xboxCon");
+    $(".form-box").addClass("xboxForm");
+</script>   
+<script>
+    var zipcodeExp = /^\d{5}$/;
+</script>
+<script>
+    $(document).ready(function(){
+        new WOW().init();
+    });
+</script>
+<script src="js/default_dynamic/es/form.validate.js"></script>
+<script src="js/default_dynamic/form.js"></script>
+</body>
+</html>

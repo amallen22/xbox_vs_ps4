@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <!-- Chrome, Firefox OS y Opera -->
+    <meta name="theme-color" content=""/>
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content=""/>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <title>Gana una XBOX o una PS4</title>
+    <meta name="description" content="{$GAME.GAME_METADESC}">
+    <meta name="keywords" content="{$GAME.GAME_METAKEY}">
+    <!--[if lt IE 9]>
+    <script src="js/core/html5shiv.min.js"></script>
+    <script src="js/core/respond.min.js"></script>
+    <![endif]-->
+    <link href="css/core/bootstrap.min.css" rel="stylesheet">
+    <link href="css/core/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/core/animate/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet">
+
+    
+</head>
+<body>
+<div class="container-fluid">
+    <h1>Gana una XBOX o una PS4 con estos dos juegazos</h1>
+    <h2>¡Elige la tuya y participa!</h2>
+    <div class="wrapper clearfix">
+        <a class="aside xbox" href="./xbox.html">
+            <canvas id="canvas-xbox"></canvas>
+            <div class="sticker" data-wow-delay="0s" data-wow-duration="0.9s">¡La quiero!</div>
+            <div class="consola wow fadeInLeft" data-wow-duration="0.8s"></div>
+            <div class="mando wow slideInDown" data-wow-delay="0.3s" data-wow-duration="0.9s"></div>
+            <div class="game wow fadeInDown" data-wow-delay="1s"></div>
+        </a>
+        <a class="aside ps4" href="./ps4.html">
+            <canvas id="canvas-ps4"></canvas>
+            <div class="sticker" data-wow-delay="0s" data-wow-duration="0.9s">¡La quiero!</div>
+            <div class="consola wow fadeInRight" data-wow-duration="0.8s"></div>
+            <div class="mando wow slideInDown" data-wow-delay="0.6s" data-wow-duration="0.9s"></div>
+            <div class="game wow fadeInDown" data-wow-delay="1s"></div>
+        </a>
+        <div class="last-days wow bounce" data-wow-delay="2.8s">
+            <span></span>
+        </div>
+    </div> 
+</div>
+<footer>
+    <div class="container brandPower clearfix">
+        <div class="col-sm-4">
+            <div class="logo"><h1>premiosfaciles.com</h1></div>
+        </div>
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-xs-6 col-sm-3">
+                    <div class="security"></div>
+                    <span>100% <br /> Seguro</span>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="forFree"></div>
+                    <span>Participación<br /> gratuita</span>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="awardGuaranteed"></div>
+                    <span>Los mejores<br /> sorteos</span>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="bestGames"></div>
+                    <span>Sorteos<br /> garantizados</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="GameColorDiv"></div>
+    <div class="container clearfix" id="cont-footer">
+        <div class="row">
+            <div class="col-md-5 col-lg-5">
+                <ul class="list-unstyled list-inline">
+                    <li><a target="_blank" href="/">Premiosfaciles</a></li>
+                    <li>
+                       <a id="trigger-imprenta" href="#modal-imprenta" role="button" data-toggle="modal" data-target="#modal-imprenta">
+                           Imprenta
+                        </a>
+                    </li>
+                    <li><a href="/publicidade" target="_blank">
+                        Promociónate</a>
+                    </li>
+                    <li>
+                        <a role="button" data-toggle="modal" data-target="#modal-winners" id="trigger-winners" href="#modal-winners">
+                            Ganadores
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-7 col-lg-7">
+                &copy; Hello Mail Interactive GmbH 2017, Sternstraße 106, 20357 Hamburg (Germany)
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="js/core/jquery-1.11.1.min.js"></script>
+<script src="js/core/bootstrap.min.js"></script>
+<script src="jscore/icheck.js"></script>
+<script src="js/core/functions.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/default_dynamic/general.js"></script>
+<script src="js/core/granim/granim.min.js"></script>    
+    
+<!-- ANIMATION WOW -->
+<script src="js/core/wow/wow.min.js"></script>
+<script>
+    $(document).ready(function(){
+        new WOW().init();
+    });
+</script>
+</body>
+</html>

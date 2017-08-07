@@ -1,0 +1,21 @@
+// Variables para el concurso 230 / xbox
+
+$color_concurso: #107c10;     
+$btn_lead: #107c10;
+
+
+/*************** IMPORTACIÓN ESTILOS *****************/
+
+    //default
+
+        @import '../default';
+
+/* customizar paginas interiores */
+
+/* !important | Cabecera para form = 3 y paginas interiores */
+
+.customFrame {
+    > div {
+        @include bgimage($img_name3, "m");
+    }
+}
